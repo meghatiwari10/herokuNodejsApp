@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <title></title>
+</head>
+<body>
+
+  <!-- main body of our application -->
+    
+
+    <div class="container" id="users">
+    <div class="col-sm-7">
+        <div class="panel-heading">
+            <h3>Add a user</h3>
+        </div>
+
+        <div class="panel-body">
+          <div class="form-group">
+          <input  class="form-control" placeholder="Name" v-model="user.username">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" placeholder="Speciality" v-model="user.speciality">   
+          </div>
+
+          <div class="form-group">
+          <input class="form-control" placeholder="ZIP" v-model="user.zip">
+          </div>
+
+          <div class="form-group">
+          <input class="form-control" placeholder="Playlist" v-model="user.playlist">
+          </div>
+
+          <button class="btn btn-primary" v-on:click="addUser">Submit</button>
+          
+        </div>
+      </div>
+      <div class="col-sm-5">
+
+      <div class="panel-heading">
+            <h3>Users</h3>
+            <div class="form-group">
+              <input class="form-control" placeholder="Name" v-model="searchuser">
+              <button class="btn btn-primary" v-on:click="searchUser">Search user</button>
+            </div>
+            
+      </div>  
+      <div>
+        
+      </div>
+      <div class="list-group" style="overflow-y:scroll;">
+
+      <!--<div v-model= "users">
+        {{ users}}
+      </div>-->
+      
+      <a href="#" class="list-group-item" v-for="user in users" >
+          <h4 class="list-group-item-heading"> {{ user.name }}</h4>
+          <h5>Speciality:  {{ user.speciality }}</h5>
+          <h5>ZIP:  {{ user.zip }}</h5>
+          <h5>Playlist:  {{ user.playlist }}</h5>
+          
+          
+        </a>  
+
+      </div>
+      </div>
+  </div>
+    <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.0/vue-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.3.0/vue-router.min.js"></script>
+  
+  <script src="app.js"></script>
+
+</body>
+</html>
