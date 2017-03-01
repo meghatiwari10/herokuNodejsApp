@@ -14,7 +14,7 @@ module.exports = {
 			pg.connect(connectionString, (err, client, done) => {
 		
 		    
-			    console.log("username (addUser.js):",req.body.username);
+			    
 			    // SQL Query > Insert Data
 			    client.query('insert into users (name,speciality,zip,playlist) values($1,$2,$3,$4)',
 			    [req.body.username, req.body.speciality, req.body.zip, req.body.playlist]);

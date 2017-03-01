@@ -7,12 +7,10 @@ var conString = process.env.DATABASE_URL || "postgres://postgres:postgres@localh
 
 module.exports = {
   search: function(req,res) {    
-        //const results = [];
-        let results;
-        console.log("search: ",req.body.search);
+
         var client = new pg.Client(conString);
         client.connect();
-        var query = client.query("SELECT * FROM users where name=($1)",[req.body.search]);
+        var query = client.query("SELECT * FROM users where name=('"+req.body.name+"')");
         
 
         query.on("row", function (row, result) { 
@@ -22,11 +20,8 @@ module.exports = {
         query.on("end", function (result) {          
             
             console.log("found: ",result.rows);
-            //res.writeHead(200, {'Content-Type': 'text/plain'});
             res.send(result.rows);
             res.end();  
-            //results = result;
-
             client.end();
         });
        
