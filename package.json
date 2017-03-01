@@ -2,8 +2,9 @@
   "name": "apextekinterview",
   "version": "1.0.0",
   "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
 
   "devDependencies": {
