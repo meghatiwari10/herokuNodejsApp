@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app     = express();
 var routes = require('./controllers');
-var users = require('./controllers/users');
+
 var pg = require('pg');
 
 // const connectionString = process.env.DATABASE_URL || 
